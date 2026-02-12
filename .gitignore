@@ -1,0 +1,21 @@
+# Vendor dependencies (not needed in repo)
+vendor/
+
+# Temp files
+*.log
+*.tmp
+*.swp
+
+# IDE files
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node modules (if any)
+node_modules/
+
+# Composer lock if not committing it
+# composer.lock  (comment out if you want to commit it)
