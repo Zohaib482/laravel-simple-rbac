@@ -1,5 +1,5 @@
 <?php
-use Zohaib\SimpleRbac\Http\Controllers\AuthController;
+use Zohaib82\SimpleRbac\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;

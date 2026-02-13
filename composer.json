@@ -17,16 +17,16 @@
   },
   "autoload": {
     "psr-4": {
-      "Zohaib\\SimpleRbac\\": "src/"
+      "Zohaib482\\SimpleRbac\\": "src/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Zohaib\\SimpleRbac\\Providers\\SimpleRbacServiceProvider"
+        "Zohaib482\\SimpleRbac\\Providers\\SimpleRbacServiceProvider"
       ],
       "aliases": {
-        "SimpleRbac": "Zohaib\\SimpleRbac\\Facades\\SimpleRbac"
+        "SimpleRbac": "Zohaib482\\SimpleRbac\\Facades\\SimpleRbac"
       }
     }
   }
