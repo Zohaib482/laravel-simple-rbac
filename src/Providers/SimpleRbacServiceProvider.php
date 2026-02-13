@@ -3,6 +3,7 @@
 namespace Zohaib482\SimpleRbac\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Routing\Router;
 
 class SimpleRbacServiceProvider extends ServiceProvider
 {
@@ -16,29 +17,38 @@ class SimpleRbacServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        $this->loadRoutesFrom(
-            __DIR__.'/../../routes/web.php'
-        );
+        // Load routes
+        $this->loadRoutesFrom(__DIR__.'/../../routes/web.php');
+
+        // Load views
         $this->loadViewsFrom(__DIR__.'/../../resources/views', 'simplerbac');
+
+        // Publish views - FIXED PATH
         $this->publishes([
-            __DIR__.'/../resources/views' => resource_path('views/vendor/simple-rbac'),
+            __DIR__.'/../../resources/views' => resource_path('views/vendor/simple-rbac'),
         ], 'simple-rbac-views');
+
+        // Publish config
+        $this->publishes([
+            __DIR__.'/../../config/simplerbac.php' => config_path('simplerbac.php'),
+        ], 'simple-rbac-config');
+
+        // Publish migrations (only in console)
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__.'/../../database/migrations' => database_path('migrations'),
-            ], 'simplerbac-migrations');
+            ], 'simple-rbac-migrations');
         }
 
-        // Auto-load migrations without publishing (optional, for quick setup)
+        // Load migrations
         $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
 
-        /** @var \Illuminate\Routing\Router $router */
+        // Register middleware aliases - FIXED NAMESPACES
+        /** @var Router $router */
         $router = $this->app['router'];
 
-        $router->aliasMiddleware('role',       \Zohaib\SimpleRbac\Http\Middleware\CheckRole::class);
-        $router->aliasMiddleware('permission', \Zohaib\SimpleRbac\Http\Middleware\CheckPermission::class);
-
-        // If you created the optional verification + roles middleware too:
-        $router->aliasMiddleware('verified.roles', \Zohaib\SimpleRbac\Http\Middleware\RequireVerificationForRoles::class);
+        $router->aliasMiddleware('role', \Zohaib482\SimpleRbac\Http\Middleware\CheckRole::class);
+        $router->aliasMiddleware('permission', \Zohaib482\SimpleRbac\Http\Middleware\CheckPermission::class);
+        $router->aliasMiddleware('verified.roles', \Zohaib482\SimpleRbac\Http\Middleware\RequireVerificationForRoles::class);
     }
 }
