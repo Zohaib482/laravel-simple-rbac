@@ -1,7 +1,16 @@
 {
   "name": "zohaib482/laravel-simple-rbac",
-  "description": "Simple RBAC for Laravel 11+",
+  "description": "Simple and lightweight Role-Based Access Control (RBAC) package for Laravel 11+ and 12 with authentication and email verification support",
   "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Zohaib",
+      "email": "zohaibkhan4822@gmail.com",
+      "homepage": "https://github.com/Zohaib482",
+      "role": "Developer"
+    }
+  ],
   "require": {
     "php": "^8.2",
     "illuminate/support": "^11.0|^12.0"
