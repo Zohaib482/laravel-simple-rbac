@@ -24,7 +24,10 @@
     "laravel": {
       "providers": [
         "Zohaib\\SimpleRbac\\Providers\\SimpleRbacServiceProvider"
-      ]
+      ],
+      "aliases": {
+        "SimpleRbac": "Zohaib\\SimpleRbac\\Facades\\SimpleRbac"
+      }
     }
   }
 }
