@@ -24,13 +24,37 @@ A simple, lightweight **Role-Based Access Control (RBAC)** package for Laravel w
    ```bash
    composer require zohaib482/laravel-simple-rbac
    ```
-2. Publish configuration, views and migrations:
+2. Publish configuration, views and migrations,Seeder:
 
    ```bash
    php artisan vendor:publish --tag=simple-rbac-config
    php artisan vendor:publish --tag=simple-rbac-views
    php artisan vendor:publish --tag=simple-rbac-migrations
    ```
+## Seeding Roles and Permissions
+
+After publishing and running migrations, you need to seed the default roles and permissions:
+
+**Publish the seeder** (if not already published):
+   ```bash
+   php artisan vendor:publish --tag=simple-rbac-seeders
+   ```
+Run the seeder:
+
+   ```php
+   php artisan db:seed --class=RbacSeeder
+   ```
+Or add it to your DatabaseSeeder.php:
+
+   ```php
+   public function run(): void
+    {
+        $this->call([
+            RbacSeeder::class,
+            // Your other seeders...
+        ]);
+    }
+    ```
 
 3. Run migrations and seed default roles/permissions:
 

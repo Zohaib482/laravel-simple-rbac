@@ -38,6 +38,10 @@ class SimpleRbacServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__.'/../../database/migrations' => database_path('migrations'),
             ], 'simple-rbac-migrations');
+
+            $this->publishes([
+                __DIR__.'/../../database/seeders' => database_path('seeders'),
+            ], 'simple-rbac-seeders');
         }
 
         // Load migrations
