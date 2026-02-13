@@ -1,6 +1,6 @@
 <?php
 
-namespace Zohaib\SimpleRbac\Http\Controllers;
+namespace Zohaib482\SimpleRbac\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
