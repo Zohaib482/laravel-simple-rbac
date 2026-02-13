@@ -1,5 +1,5 @@
 {
-  "name": "zohaib/simple-rbac",
+  "name": "zohaib482/laravel-simple-rbac",
   "description": "Simple RBAC for Laravel 11+",
   "type": "library",
   "require": {
