@@ -1,6 +1,6 @@
 <?php
 
-namespace Zohaib482\SimpleRbac\Providers;
+namespace Zohaib\SimpleRbac\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Zohaib482\SimpleRbac\Traits;
+namespace Zohaib\SimpleRbac\Traits;
 
 use Illuminate\Support\Collection;
 use Zohaib\SimpleRbac\Models\Role;

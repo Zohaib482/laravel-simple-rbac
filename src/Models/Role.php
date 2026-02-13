@@ -1,6 +1,6 @@
 <?php
 
-namespace Zohaib482\SimpleRbac\Models;
+namespace Zohaib\SimpleRbac\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;

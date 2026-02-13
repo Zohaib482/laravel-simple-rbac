@@ -1,6 +1,6 @@
 <?php
 
-namespace Zohaib482\SimpleRbac\Http\Middleware;
+namespace Zohaib\SimpleRbac\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
