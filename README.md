@@ -22,7 +22,7 @@ A simple, lightweight **Role-Based Access Control (RBAC)** package for Laravel w
 1. Install the package via Composer:
 
    ```bash
-   composer require zohaib/laravel-simple-rbac
+   composer require zohaib482/laravel-simple-rbac
    ```
 2. Publish configuration, views and migrations:
 
@@ -41,7 +41,7 @@ A simple, lightweight **Role-Based Access Control (RBAC)** package for Laravel w
 
    ```php
     use Illuminate\Contracts\Auth\MustVerifyEmail;
-    use Zohaib\SimpleRbac\Traits\HasRoles;
+    use Zohaib482\SimpleRbac\Traits\HasRoles;
 
     class User extends Authenticatable implements MustVerifyEmail
     {
